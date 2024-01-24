@@ -29,29 +29,33 @@ public class User {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getfName() {
         return fName;
+    }
+
+
+    public String getlName() {
+        return lName;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
+    }
+
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setfName(String fName) {
         this.fName = fName;
     }
 
-    public String getlName() {
-        return lName;
-    }
-
     public void setlName(String lName) {
         this.lName = lName;
     }
 
-    public int getBirthYear() {
-        return birthYear;
-    }
 
     public void setBirthYear(int birthYear) {
         this.birthYear = birthYear;
