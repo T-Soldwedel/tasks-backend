@@ -18,11 +18,13 @@ public class UserController {
         this.userService = userService;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{userId}")
     public User getUserById(@PathVariable String userId) {
         return userService.getUserById(userId);

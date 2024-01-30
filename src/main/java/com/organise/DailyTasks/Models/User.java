@@ -3,6 +3,8 @@ package com.organise.DailyTasks.Models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document(collection = "users")
 public class User {
 
@@ -11,38 +13,50 @@ public class User {
 
     private String fName;
     private String lName;
-    private int birthYear;
+
+    private String email;
+
+    private String password;
+//    @Field("dailyThoughts")
+    private List<DailyThoughts> dailyThoughts;
+
 
 
     public User() {
 
     }
 
-    public User(String fName, String lName, int birthYear) {
+    public User(String fName, String lName, String email, String password, List<DailyThoughts> dailyThoughts) {
         this.fName = fName;
         this.lName = lName;
-        this.birthYear = birthYear;
+        this.email = email;
+        this.password = password;
+        this.dailyThoughts = dailyThoughts;
     }
-
 
     public String getId() {
         return id;
     }
 
-
     public String getfName() {
         return fName;
     }
-
 
     public String getlName() {
         return lName;
     }
 
-    public int getBirthYear() {
-        return birthYear;
+    public String getEmail() {
+        return email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public List<DailyThoughts> getDailyThoughts() {
+        return dailyThoughts;
+    }
 
     public void setId(String id) {
         this.id = id;
@@ -56,9 +70,16 @@ public class User {
         this.lName = lName;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public void setBirthYear(int birthYear) {
-        this.birthYear = birthYear;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setDailyThoughts(List<DailyThoughts> dailyThoughts) {
+        this.dailyThoughts = dailyThoughts;
     }
 
     @Override
@@ -67,9 +88,18 @@ public class User {
                 "id='" + id + '\'' +
                 ", fName='" + fName + '\'' +
                 ", lName='" + lName + '\'' +
-                ", birthYear=" + birthYear +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", dailyThoughts=" + dailyThoughts +
                 '}';
     }
+
+    public String getUsername() {
+        return fName;
+    }
+
+
+
 }
 
 // ToDo: Validation
